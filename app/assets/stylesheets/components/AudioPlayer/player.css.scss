@@ -1,0 +1,71 @@
+.audio-player {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+/*.audio-player-task*/
+/*transition all 1s ease-out*/
+}
+.audio-player .toggle-audio-player-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+  opacity: 0.6;
+  background: #fff;
+  border: none;
+  display: block;
+  cursor: pointer;
+}
+.audio-player-task {
+  width: 210px;
+  height: 70px;
+  opacity: 0.6;
+  background: #fff;
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 70px;
+  transition: all ease-in-out 0.3s;
+}
+.audio-player-task.ng-hide {
+  opacity: 0;
+  bottom: -85px;
+}
+.audio-player-task a {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 11px;
+  border-radius: 50px;
+  float: left;
+}
+.btn-click-play.play-icon {
+  background: url("icons/play48x48.png") no-repeat center center;
+}
+.btn-click-play.play-icon:hover {
+  background: #ff4500 url("icons/play48x48.png") no-repeat center center;
+}
+.btn-click-play.pause-icon {
+  background: url("icons/pause48x48.png") no-repeat center center;
+}
+.btn-click-play.pause-icon:hover {
+  background: #ff4500 url("icons/pause48x48.png") no-repeat center center;
+}
+.btn-click-volume-down {
+  background: url("icons/down48x48.png") no-repeat center center;
+}
+.btn-click-volume-down:hover {
+  background: #ff4500 url("icons/down48x48.png") no-repeat center center;
+}
+.btn-click-volume-down.mute {
+  background: url("icons/mute48x48.png") no-repeat center center;
+}
+.btn-click-volume-up {
+  background: url("icons/up48x48.png") no-repeat center center;
+}
+.btn-click-volume-up.max {
+  background: #fff url("icons/up48x48.png") no-repeat center center;
+}
+.btn-click-volume-up:hover {
+  background: #ff4500 url("icons/up48x48.png") no-repeat center center;
+}

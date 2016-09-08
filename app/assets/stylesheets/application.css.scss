@@ -15,3 +15,12 @@
  */
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+body.frontend {
+  height: 100%;
+  overflow: hidden;
+  background: #ffa500;
+}
+#main {
+  margin-top: 60px;
+}

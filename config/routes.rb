@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  namespace :admin do
+  get 'dashboard' => 'dashboard#index'
+  end
+
+  #get 'admin/index'
+
+  #get 'home/index'
 
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

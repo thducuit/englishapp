@@ -1,0 +1,21 @@
+<div class="audio-action">
+  <form role="form">
+    <div my-audio config="a.myConfig" value="a.myAudio"></div>
+    <button class="btn btn-info" ng-click="a.myConfig.play()">Play</button>
+    <button class="btn btn-default"  ng-click="a.myConfig.pause()">Pause</button>
+
+    <div my-lyrics lyrics="a.myAudio.time" config="a.lyricsConfig"></div>
+
+    <!--<div class="form-group">-->
+      <!--<label for="content">Content</label>-->
+      <!--<textarea class="form-control" ng-model="a.myData.content" type="text" id="content"></textarea>-->
+      <!--<a class="btn btn-info" ng-click="a.createContent()">Create</a>-->
+    <!--</div>-->
+
+    <div class="pull-right">
+      <button type="button" class="btn btn-primary" ng-click="a.updateLyricsAction()">Update</button>
+      <button type="button" class="btn btn-default" ng-click="a.cancelAction()">Cancel</button>
+    </div>
+
+  </form>
+</div>

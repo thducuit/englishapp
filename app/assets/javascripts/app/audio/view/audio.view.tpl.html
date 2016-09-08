@@ -1,0 +1,44 @@
+<div class="audio-view">
+  <!--button add new-->
+  <div class="pull-right">
+    <div class="btn-audio-add">
+      <button type="button" class="btn btn-primary" ng-click="a.addAction()">Add New</button>
+    </div>
+  </div>
+
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>File</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td>
+          <div class="btn-group">
+            <button type="button" ng-click="a.editAction()" class="btn btn-default">Edit</button>
+            <button type="button" ng-click="a.deleteAction()" class="btn btn-danger">Delete</button>
+            <button type="button" ng-click="a.lyricsAction()" class="btn btn-info">Lyrics</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!--pagination-->
+  <div class="pull-right">
+    <ul class="pagination">
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+    </ul>
+  </div>
+</div>

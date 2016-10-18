@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('audioManagerApp')
-    .factory('AudioSrv', ['audioConstant', function(audioConstant) {
+    .factory('AudioSrv', ['audioConstant', '$http', function(audioConstant, $http) {
       var srv = {};
 
       var mode = {
@@ -32,6 +32,14 @@
         srv.cache = {};
         srv.cache.viewObject = mode.view;
       }
+      
+      srv.getAll = function() {
+        return $http.get(audioConstant.audio.api.v1.get);
+      };
+      
+      srv.post = function(object) {
+        return $http.post(audioConstant.audio.api.v1.post, object);
+      };
 
       init();
       return srv;

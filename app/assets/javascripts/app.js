@@ -13,5 +13,5 @@ angular
 angular
   .module('audioManagerApp', ['templates']);
 angular
-  .module('engApp', ['myDirectives', 'audioManagerApp']);
+  .module('engApp', ['myDirectives', 'audioManagerApp', 'ngFileUpload']);
 

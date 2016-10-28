@@ -11,7 +11,7 @@
         },
         api: {
           v1: {
-            get: '/api/v1/audios.json',
+            get: '/api/v1/audios',
             post: '/api/v1/audios'
           }
         }

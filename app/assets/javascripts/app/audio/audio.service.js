@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('audioManagerApp')
-    .factory('AudioSrv', ['audioConstant', '$http', function(audioConstant, $http) {
+    .factory('AudioSrv', ['audioConstant', '$http', 'Upload', function(audioConstant, $http, Upload) {
       var srv = {};
 
       var mode = {
@@ -37,8 +37,24 @@
         return $http.get(audioConstant.audio.api.v1.get);
       };
       
+      srv.getAudio = function(object) {
+        return $http.get([audioConstant.audio.api.v1.get, object.id].join('/'));
+      };
+      
+      srv.deleteAudio = function(object) {
+        return $http.delete([audioConstant.audio.api.v1.get, object.id].join('/'));
+      };
+      
       srv.post = function(object) {
-        return $http.post(audioConstant.audio.api.v1.post, object);
+        //return $http.post(audioConstant.audio.api.v1.post, object);
+        return Upload.upload({
+          url: audioConstant.audio.api.v1.post,
+          method: 'POST',
+          headers: { 'Content-Type': false },
+          data: {
+            audio: object
+          }
+        });
       };
 
       init();

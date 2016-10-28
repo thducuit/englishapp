@@ -3,4 +3,5 @@
 asset 'angular', '1.5.0'
 asset 'angular-route'
 asset 'bootstrap-sass-official'
-# asset 'bootstrap'
+asset 'angular-file-upload'
+asset 'ng-file-upload'

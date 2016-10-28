@@ -12,7 +12,8 @@
 
     <div class="form-group">
       <label for="file">File</label>
-      <input type="file" class="form-control" id="file">
+      <img ngf-thumbnail="a.audio.file" class="thumb">
+      <input type="file" class="form-control" id="file" ngf-select ng-model="a.audio.file">
     </div>
 
     <div class="pull-right">

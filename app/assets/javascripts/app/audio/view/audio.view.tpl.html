@@ -11,7 +11,6 @@
       <tr>
         <th>Title</th>
         <th>File</th>
-        <th>Date</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -19,12 +18,11 @@
       <tr ng-repeat="audio in a.audios">
         <td>{{ audio.title }}</td>
         <td>Doe</td>
-        <td>john@example.com</td>
         <td>
           <div class="btn-group">
-            <button type="button" ng-click="a.editAction()" class="btn btn-default">Edit</button>
-            <button type="button" ng-click="a.deleteAction()" class="btn btn-danger">Delete</button>
-            <button type="button" ng-click="a.lyricsAction()" class="btn btn-info">Lyrics</button>
+            <button type="button" ng-click="a.editAction(audio)" class="btn btn-default">Edit</button>
+            <button type="button" ng-click="a.deleteAction(audio)" class="btn btn-danger">Delete</button>
+            <button type="button" ng-click="a.lyricsAction(audio)" class="btn btn-info">Lyrics</button>
           </div>
         </td>
       </tr>

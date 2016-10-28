@@ -337,7 +337,7 @@
             },
             change: function (audio) {
               if (!audio.file) {
-                console.err('ERROR: File is required!');
+                console.error('ERROR: File is required!');
               }
               angular.element(this.file).find('source').attr('src', audio.file);
               this.reload();

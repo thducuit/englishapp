@@ -15,4 +15,5 @@
 //= require angular/angular
 //= require angular-route/angular-route
 //= require angular-rails-templates
+//= require ng-file-upload/ng-file-upload
 //= require_tree .

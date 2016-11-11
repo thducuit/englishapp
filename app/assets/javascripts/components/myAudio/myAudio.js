@@ -32,11 +32,11 @@
         AUTO: 'auto'
       }
     })
-    .filter('trusted', ['$sce', function ($sce) {
-      return function (url) {
-        return $sce.trustAsResourceUrl(url);
-      };
-    }])
+    // .filter('trusted', ['$sce', function ($sce) {
+    //   return function (url) {
+    //     return $sce.trustAsResourceUrl(url);
+    //   };
+    // }])
     .directive('myAudio', ['$http', 'myAudioConstant', '$compile', function ($http, myAudioConstant, $compile) {
       console.log('test audio');
       return {
@@ -390,7 +390,7 @@
           function buildAudioTemplate() {
             var template = (
               '<audio id="the-audio" controls>' +
-                '<source ng-src="{{ audio.file | trusted }}" type="audio/mpeg">' +
+                '<source ng-src="{{ audio.file }}" type="audio/mpeg">' +
                 '</audio>'
               );
             element.find('.audio-file').append($compile(template)(scope));

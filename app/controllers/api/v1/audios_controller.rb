@@ -1,5 +1,5 @@
 class Api::V1::AudiosController < ApplicationController
-    before_action :find_audio, only: [:show, :update, :destroy]
+    before_action :find_audio, only: [:show, :update, :destroy, :lyric]
     
     def index
         render json: Audio.all
@@ -34,11 +34,20 @@ class Api::V1::AudiosController < ApplicationController
         end
     end
     
+    def lyric
+        @audio.lyric = params[:lyric]
+        if @audio.save
+            render json: @audio
+        else
+            render json: @audio.errors, status: :unprocessable_entity
+        end
+    end
+    
     private
     def find_audio
         @audio = Audio.find(params[:id])
     end
     def audio_params
-        params.require(:audio).permit(:title, :description, :file)
+        params.require(:audio).permit(:title, :description, :file, :lyric => [])
     end
 end

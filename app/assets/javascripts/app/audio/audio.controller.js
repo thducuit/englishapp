@@ -10,6 +10,10 @@
       vm.audios = [];
       vm.audio = {};
       
+      vm.myAlert = {
+        timeout: 1500
+      };
+      
       vm.data = AudioSrv.cache;
       vm.lyricsConfig = {
         template: 'app/audio/action/test.html'
@@ -44,7 +48,7 @@
 
       vm.lyricsAction = function (object) {
         getAudio(object, function(response) {
-          vm.myAudio.file = response.url;
+          vm.audio = AudioSrv.parse.toAudio(response);
           AudioSrv.switchView('lyrics');
         });
       };
@@ -63,7 +67,7 @@
       }
 
       vm.updateLyricsAction = function() {
-        console.log(vm.myAudio);
+        updateLyric();
       };
       
       vm.createAction = function() {
@@ -71,8 +75,15 @@
       };
       
       function postAudio() {
-        AudioSrv.post(vm.audio).success(function(response) {
+        AudioSrv.postAudio(vm.audio).success(function(response) {
           backToViewPage();
+        });
+      }
+      
+      function updateLyric() {
+        AudioSrv.updateLyric(vm.audio).success(function() {
+          backToViewPage();
+          vm.myAlert._success("Update lyric successfully")
         });
       }
       
@@ -120,9 +131,6 @@
         });
       }
       
-      // vm.onFileSelected = function(file) {
-      //   console.log('file', file);
-      // };
       
       
       /**

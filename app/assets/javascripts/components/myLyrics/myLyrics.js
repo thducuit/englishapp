@@ -95,9 +95,6 @@
            * @returns {*|then|!Promise.<RESULT>|then|then|then}
            */
           function getTemplate(callback) {
-            if(!callback) {
-              return false;
-            }
             if (scope.config.template) {
               return $http.get(scope.config.template, {cache: $templateCache})
                 .then(function (result) {

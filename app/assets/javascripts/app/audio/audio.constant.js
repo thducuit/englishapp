@@ -12,7 +12,9 @@
         api: {
           v1: {
             get: '/api/v1/audios',
-            post: '/api/v1/audios'
+            put: '/api/v1/audios',
+            post: '/api/v1/audios',
+            putLyric: '/api/v1/audios/lyric'
           }
         }
       }

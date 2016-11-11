@@ -1,11 +1,11 @@
 <div class="audio-action">
   <form role="form">
-    <div my-audio config="a.myConfig" value="a.myAudio"></div>
-    <button class="btn btn-info" ng-click="a.myConfig.play()">Play</button>
-    <button class="btn btn-default"  ng-click="a.myConfig.pause()">Pause</button>
-    <button class="btn btn-danger"  ng-click="a.myConfig.stop()">Pause</button>
+    <div my-audio config="a.myConfig" value="a.audio"></div>
+    <button ng-disabled="a.inPlay === true" class="btn btn-info" ng-click="a.myConfig.play(); a.inPlay = true;">Play</button>
+    <button ng-disabled="a.inPlay === false" class="btn btn-default"  ng-click="a.myConfig.pause(); a.inPlay = false">Pause</button>
+    <button ng-disabled="a.inPlay === false" class="btn btn-danger"  ng-click="a.myConfig.stop(); a.inPlay = false">Stop</button>
 
-    <div my-lyrics lyrics="a.myAudio.time" config="a.lyricsConfig"></div>
+    <div my-lyrics lyrics="a.audio.lyric" config="a.lyricsConfig"></div>
 
     <!--<div class="form-group">-->
       <!--<label for="content">Content</label>-->

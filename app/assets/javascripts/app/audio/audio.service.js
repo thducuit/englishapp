@@ -45,7 +45,11 @@
         return $http.delete([audioConstant.audio.api.v1.get, object.id].join('/'));
       };
       
-      srv.post = function(object) {
+      srv.updateLyric = function(object) {
+        return $http.put([audioConstant.audio.api.v1.putLyric, object.id].join('/'), object);
+      };
+      
+      srv.postAudio = function(object) {
         //return $http.post(audioConstant.audio.api.v1.post, object);
         return Upload.upload({
           url: audioConstant.audio.api.v1.post,
@@ -55,6 +59,20 @@
             audio: object
           }
         });
+      };
+      
+      srv.parse = {
+        toAudio: function(object) {
+          object.file  = object.url;
+          object.lyric = object.lyric ? object.lyric : []
+          return object;
+        },
+        request: {
+          updateLyric: function(object) {
+            delete object.file;
+            return object;
+          }
+        }
       };
 
       init();

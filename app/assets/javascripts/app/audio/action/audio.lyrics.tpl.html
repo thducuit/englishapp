@@ -1,6 +1,6 @@
 <div class="audio-action">
   <form role="form">
-    <div my-audio config="a.myConfig" value="a.audio"></div>
+    <div my-audio config="a.myConfig" value="a.audio" ng-init="a.inPlay = false"></div>
     <button ng-disabled="a.inPlay === true" class="btn btn-info" ng-click="a.myConfig.play(); a.inPlay = true;">Play</button>
     <button ng-disabled="a.inPlay === false" class="btn btn-default"  ng-click="a.myConfig.pause(); a.inPlay = false">Pause</button>
     <button ng-disabled="a.inPlay === false" class="btn btn-danger"  ng-click="a.myConfig.stop(); a.inPlay = false">Stop</button>

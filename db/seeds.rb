@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+levels = Level.create([{title: 'Beginner'}, {title: 'Elementary'}, {title: 'Pre-intermediate'}, {title: 'Intermediate'}, {title: 'Upper-intermediate'}, {title: 'Advanced'}, {title: 'Proficiency'}])

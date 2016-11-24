@@ -64,7 +64,8 @@
       srv.parse = {
         toAudio: function(object) {
           object.file  = object.url;
-          object.lyric = object.lyric ? object.lyric : []
+          object.lyric = object.lyric ? object.lyric : [];
+          object.time = object.lyric;
           return object;
         },
         request: {
